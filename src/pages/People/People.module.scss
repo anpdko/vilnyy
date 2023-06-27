@@ -1,0 +1,107 @@
+
+.people{
+   padding-bottom: 150px;  
+
+   .cards{
+      display: flex;
+      gap: 90px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      .card{
+         position: relative;
+         width: 100%;
+         max-width: 310px;
+         min-width: 200px;
+
+         .inst{
+            position: absolute;
+            z-index: 1;
+            bottom: 80px;
+            left: -10px;
+         }
+
+         .foto{
+            width: 100%;
+         }
+         .btn{
+            position: absolute;
+            z-index: 1;
+            bottom: -10px;
+            left: -20px;
+         }
+      }
+   }
+
+   .bg_popup{
+      position: fixed;
+      inset: 0;
+      background: rgba(217, 217, 217, 0.05);
+      backdrop-filter: blur(17px);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+
+      .box_popup{
+         border: 5px solid var(--red);
+         background-color: var(--white);
+         position: relative;
+         margin: 50px 100px;
+         max-height: 100%;
+         padding: 5vh 3rem;
+         box-sizing: border-box;
+         overflow-y: auto;
+
+         &::-webkit-scrollbar {
+            width: 10px;
+            background-color: rgba(26, 24, 47, 0.15);
+            border-radius: 5px;
+            height: 200px;
+         }
+         
+         &::-webkit-scrollbar-thumb {
+               background: rgba(255, 0, 0, 0.101);
+               border-radius: 10px;
+         }
+
+         h2{
+            font-family: "Beer money";
+            font-weight: 400;
+            margin: 0;
+            font-size: 2rem;
+
+            strong {
+               color: var(--red);
+            }
+         }
+
+         .close{
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--red);
+            border-radius: 50%;
+            i{
+               font-size: 25px;
+               color: var(--white);
+            }
+         }
+
+         .col{
+            display: flex;
+            align-items: flex-start;
+
+            img{
+               max-width: 400px;
+            }
+         }
+      }
+   }
+}

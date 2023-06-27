@@ -1,0 +1,30 @@
+
+
+.online{
+
+   .box_content{
+      display: grid;
+      grid-template-columns: 3fr 2fr 2fr;
+
+      .text{
+         display: flex;
+         flex-direction: column;
+         align-items: flex-end;
+         img{
+            max-width: 100%;
+         }
+      }
+      .phone{
+         width: 400px;
+         // max-width:300px;
+         img{
+            width: 100%;
+         }
+      }
+      .comment{
+         img{
+            max-width: 100%;
+         }
+      }
+   }
+}

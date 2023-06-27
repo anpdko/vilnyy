@@ -1,0 +1,42 @@
+
+
+.target{
+   margin-top: 100px;
+   display: grid;
+   grid-template-columns: 3fr 2fr;
+   gap: 80px;
+   .left{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      p{
+         margin-top: 100px;
+
+         strong{
+            color: var(--red);
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-family: 'Rubik Glitch'; 
+         }
+      }
+      img{
+         max-width: 100%;
+      }
+   }
+
+   .right{
+      padding-left: 50px;
+      img{
+         width: 90%;
+      }
+
+      .foto1, .foto3{
+         margin-left: -100px;
+      }
+
+      .foto2{
+         margin: -100px 0;
+      }
+   }
+}

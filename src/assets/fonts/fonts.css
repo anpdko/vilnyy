@@ -1,0 +1,8 @@
+
+@font-face {
+   font-family: 'Beer money';
+   src: url('./beer-money.ttf') format('truetype');
+   /* Дополнительные свойства шрифта, если требуется */
+   font-weight: normal;
+   font-style: normal;
+ }

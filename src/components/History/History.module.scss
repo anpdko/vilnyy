@@ -1,0 +1,26 @@
+
+
+.history{
+   margin-top: 20px;
+   
+   h1{
+      margin: 0;
+   }
+
+   .box_info{
+      display: flex;
+      justify-content: space-between;
+
+      p{
+         max-width: 850px;
+      }
+
+      .box_foto{
+         padding: 40px 20px 0 20px;
+         img {
+            max-width: 500px;
+            width: 100%;
+         }
+      }
+   }
+}

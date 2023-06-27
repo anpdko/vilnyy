@@ -1,0 +1,118 @@
+.card.left {
+   padding-right: 50px;
+
+   .decor {
+      left: 100%;
+   }
+}
+
+.card.right {
+   padding-left: 50px;
+
+   .decor {
+      right: 100%;
+   }
+}
+
+.card {
+   .box_frame {
+      position: relative;
+
+      .decor {
+         position: absolute;
+         margin-inline: -10px;
+      }
+
+      .frame {
+         width: 100%;
+         position: relative;
+         z-index: 2;
+      }
+
+      .box_foto {
+         position: absolute;
+         inset: 0;
+         display: flex;
+         align-items: flex-start;
+         justify-content: center;
+
+         .foto {
+            width: 85%;
+            height: 80%;
+            padding-top: 10%;
+
+            object-fit: cover;
+            object-position: center;
+            z-index: 1;
+         }
+      }
+
+      .name {
+         margin: 0;
+         position: absolute;
+         bottom: 10px;
+         font-family: "Beer money";
+         font-weight: 400;
+         width: 85%;
+         margin-bottom: 5%;
+         min-height: 17%;
+         font-size: 1.5rem;
+         line-height: 1.5rem;
+         z-index: 3;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+      }
+
+      .inst {
+         position: absolute;
+         top: 65%;
+         right: 0;
+         z-index: 4;
+      }
+
+      .messages {
+         position: absolute;
+         font-family: "Beer money";
+         font-weight: 400;
+         font-size: 1rem;
+         line-height: 1rem;
+         background-color: #fff;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+         border-radius: 15px;
+         padding: 20px 30px;
+         top: -40px;
+         left: 40px;
+         right: -40px;
+         z-index: 5;
+         transform: scale(0) translateY(100px);
+         transition: all 0.2s ease-out;
+      }
+
+      .messages::after {
+         position: absolute;
+         content: "";
+         display: block;
+         width: 0;
+         height: 0;
+         border-top: 50px solid #fff;
+         border-right: 30px solid transparent;
+         transform: rotate(10deg);
+         top: calc(100% - 5px);
+         right: 15%;
+      }
+   }
+
+   .job {
+      margin: 0;
+      text-align: center;
+      margin-top: -4%;
+   }
+}
+
+.card:hover {
+   .messages {
+      transform: scale(1) translateY(0);
+   }
+}

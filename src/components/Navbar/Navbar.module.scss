@@ -1,0 +1,60 @@
+.navbar {
+   position: fixed;
+   left: 50px;
+   top: 0;
+   bottom: 0;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+
+   .menu {
+      padding: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+
+      li {
+         font-family: "Beer money";
+         font-weight: 400;
+         list-style: none;
+         a {
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: 0.3s;
+         }
+      }
+
+      li.lengs{
+         display: flex;
+         gap: 5px;
+         span{
+            transition: 0.2s;
+            cursor: pointer;
+         }
+         span.active{
+            text-transform: uppercase;
+            color: var(--red);
+         }
+      }
+   }
+}
+
+
+.navbar{
+   li, a {
+      color: #000;
+   }
+   a.active {
+      font-size: 1.4rem !important;
+      color: var(--red);
+   }
+}
+
+.navbar.home{
+   li, a {
+      color: var(--white);
+   }
+}

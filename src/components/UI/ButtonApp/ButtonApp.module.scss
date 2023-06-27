@@ -1,0 +1,33 @@
+
+.btn{
+   padding: 0.1rem 0.8333rem 0.1rem 1.25rem;
+   font-size: 1rem;
+   font-family: Open Sans;
+   outline: none;
+   border-radius: 50px;
+   font-weight: 700;
+   display: inline-flex;;
+   align-items: center;
+   gap: 0.5rem;
+   cursor: pointer;
+   border: 3px solid transparent;
+
+   i{
+      font-size: 1.8em;
+   }
+}
+
+.btn.red{
+   color: var(--white);
+   background-color: var(--red);
+}
+
+.btn.white{
+   color: var(--red);
+   background-color: var(--white);
+   border: 3px solid var(--red);
+}
+
+.btn.link{
+   text-decoration: none;
+}
