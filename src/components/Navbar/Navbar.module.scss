@@ -1,3 +1,4 @@
+
 .navbar {
    position: fixed;
    left: 50px;
@@ -7,13 +8,31 @@
    display: flex;
    flex-direction: column;
    justify-content: center;
+   transition: background 0.4s ease-in-out, transform 0.6s ease-out,;
 
    @media (max-width: 1420px) {
       left: 40px;
    }
 
    @media (max-width: 1060px) {
-      display: none;
+      z-index: 100;
+      inset: 0;
+      box-sizing: border-box;
+      padding: 70px 0;
+      overflow-y: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(-100%);
+
+      &.active {
+         transform: translateX(0);
+         background: #fff;
+      }
+   }
+
+   @media (max-width: 560px) {
+      align-items: flex-end;
    }
 
 
@@ -24,6 +43,20 @@
       flex-direction: column;
       gap: 17px;
 
+      @media (max-width: 1060px) {
+         text-align: end;
+         min-height: 0px;
+
+         li{
+            display: flex;
+            justify-content: flex-end;
+         }
+      }
+
+      @media (max-width: 560px) {
+         padding-right: 60px;
+      }
+
       li {
          font-family: "Beer money";
          font-weight: 400;
@@ -32,6 +65,10 @@
             font-size: 1.2rem;
             text-decoration: none;
             transition: 0.3s;
+
+            @media (max-width: 1060px) {
+               font-size: 2.2rem !important;
+            }
          }
       }
 
@@ -59,10 +96,52 @@
       font-size: 1.4rem !important;
       color: var(--red);
    }
+
+    @media (max-width: 1060px) {
+      font-size: 2rem !important;
+   }
 }
 
 .navbar.home{
    li, a {
       color: var(--white);
+   }
+}
+
+.toggle{
+   z-index: 101;
+   position: fixed;
+   background-color: #ffffffb2;
+   backdrop-filter: blur(5px);
+   box-shadow: 0 0 2px #c9c9c9;
+   border-radius: 50%;
+   padding: 20px 15px;
+   right: 15px;
+   top: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 7px;
+   transition: 0.5s;
+
+   span{
+      width: 35px;
+      background-color: #222222;
+      height: 4px;
+      transition: 0.5s;
+   }
+}
+
+.toggle.active{
+   right: 40px;
+
+   span:nth-child(1){
+      width: 20px;
+      transform: rotate(-40deg) translate(-10px, -2px);
+   }
+
+   span:nth-child(3){
+      width: 20px;
+      transform: rotate(40deg) translate(-10px, 2px);;
    }
 }

@@ -6,30 +6,45 @@ import navigation from '../../data/navigation'
 
 
 const Navbar = () => {
+   const [toggle, setToggle] = useState(false)
    const [lang, srtLang] = useState('uk')
-   const {pathname} = useLocation();
-   const isHome = () => pathname==="/"?s.home:''
+   const { pathname } = useLocation();
+   const isHome = () => pathname === "/" ? s.home : ''
 
-   const isActive = ({isActive}:{isActive:boolean}) => {
+   const isActive = ({ isActive }: { isActive: boolean }) => {
       return isActive ? s.active : ""
    }
 
-   const classLang = (langProp:string):string => {
-      return lang === langProp?"active":""
+   const classLang = (langProp: string): string => {
+      return lang === langProp ? "active" : ""
+   }
+
+   const toggleActive = (): string => {
+      return toggle ? "active" : ""
    }
 
    return (
-      <nav className={[s.navbar, isHome()].join(" ")}>
-         <ul className={s.menu}>
-            {navigation.map(nav => 
-               <li key={nav.link}><NavLink to={nav.link} className={isActive}>{nav.title}</NavLink></li>
-            )}
-            <li className={s.lengs}>
-               <span className={s[classLang("uk")]} onClick={()=>srtLang("uk")}>укр</span>/
-               <span className={s[classLang("en")]} onClick={()=>srtLang("en")}>eng</span>
+      <React.Fragment>
+         <div 
+            className={[s.toggle, s[toggleActive()]].join(' ')} 
+            onClick={() => setToggle(!toggle)}
+         >
+            <span></span>
+            <span></span>
+            <span></span>
+         </div>
+         <nav className={[s.navbar, isHome(), s[toggleActive()]].join(" ")}>
+            <ul className={s.menu}>
+               {navigation.map(nav =>
+                  <li key={nav.link}><NavLink to={nav.link} className={isActive}>{nav.title}</NavLink></li>
+               )}
+               <li className={s.lengs}>
+                  <span className={s[classLang("uk")]} onClick={() => srtLang("uk")}>укр</span>/
+                  <span className={s[classLang("en")]} onClick={() => srtLang("en")}>eng</span>
                </li>
-         </ul>
-      </nav>
+            </ul>
+         </nav>
+      </React.Fragment>
    );
 };
 export default Navbar
