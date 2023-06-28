@@ -36,7 +36,15 @@ const Navbar = () => {
          <nav className={[s.navbar, isHome(), s[toggleActive()]].join(" ")}>
             <ul className={s.menu}>
                {navigation.map(nav =>
-                  <li key={nav.link}><NavLink to={nav.link} className={isActive}>{nav.title}</NavLink></li>
+                  <li key={nav.link}>
+                     <NavLink 
+                        to={nav.link} 
+                        onClick={() => setToggle(false)} 
+                        className={isActive}
+                     >
+                        {nav.title}
+                     </NavLink>
+                  </li>
                )}
                <li className={s.lengs}>
                   <span className={s[classLang("uk")]} onClick={() => srtLang("uk")}>укр</span>/
