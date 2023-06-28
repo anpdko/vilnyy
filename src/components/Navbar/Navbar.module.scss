@@ -8,6 +8,14 @@
    flex-direction: column;
    justify-content: center;
 
+   @media (max-width: 1420px) {
+      left: 40px;
+   }
+
+   @media (max-width: 1060px) {
+      display: none;
+   }
+
 
    .menu {
       padding: 0;

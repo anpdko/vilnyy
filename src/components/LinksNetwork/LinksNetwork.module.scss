@@ -8,6 +8,14 @@
    flex-direction: column;
    justify-content: center;
 
+   @media (max-width: 1420px) {
+      right: 30px;
+   }
+
+   @media (max-width: 890px) {
+      display: none;
+   }
+
    .menu {
       display: flex;
       flex-direction: column;

@@ -1,5 +1,11 @@
 .values {
    .items {
+      @media (max-width: 760px) {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+      }
+
       .item {
          box-sizing: border-box;
          width: calc(100% + 100px);
@@ -28,6 +34,31 @@
             }
             h2, p {
                margin: 0;
+            }
+         }
+
+         @media (max-width: 760px) {
+            gap: 60px;
+            padding: 40px 120px 40px 40px;
+         }
+
+         @media (max-width: 580px) {
+            gap: 40px;
+            padding: 20px 80px 20px 20px;
+         }
+
+         @media (max-width: 520px) {
+            gap: 30px;
+            padding: 15px 80px 15px 15px;
+            .index {
+               h3 {
+                  font-size: 6rem;
+                  line-height: 6rem;
+               }
+            }
+
+            .box_info{
+               gap: 10px;
             }
          }
       }
