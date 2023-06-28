@@ -15,7 +15,10 @@ const People = () => {
          <div className={s.cards}>
             {peopleData.map(person =>
                <div  key={person.id} className={s.card}>
-                  <img src={person.foto} alt="foto" className={s.foto} />
+                  <div className={s.box_foto}>
+                  <  img src={person.foto} alt="foto" className={s.foto} />
+                  </div>
+
                   {!!person?.inst &&
                      <IconInst className={s.inst} link={person.inst}/>}
                   <ButtonApp className={s.btn} type="link" to={"/colivers/" + person.id}>
