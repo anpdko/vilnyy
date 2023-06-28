@@ -1,4 +1,9 @@
 .values {
+
+   @media (max-width: 760px) {
+      padding-top: 20px;
+   }
+
    .items {
       @media (max-width: 760px) {
          display: flex;
