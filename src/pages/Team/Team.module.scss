@@ -16,6 +16,12 @@
 
       @media (max-width: 840px) {
          grid-template-columns: 1fr;
+         gap: 80px;
+      }
+
+      @media (max-width: 540px) {
+         grid-template-columns: 1fr;
+         gap: 60px;
       }
    }
 }
