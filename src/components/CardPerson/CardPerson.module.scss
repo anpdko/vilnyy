@@ -1,26 +1,73 @@
-.card.left {
-   padding-right: 50px;
-
-   .decor {
-      left: 100%;
+@media (min-width: 840px) {
+   .card.left {
+      padding-right: 50px;
+      .decor {
+         left: 100%;
+      }
+   }
+   .card.right {
+      padding-left: 50px;
+      .decor {
+         right: 100%;
+      }
    }
 }
 
-.card.right {
-   padding-left: 50px;
 
-   .decor {
-      right: 100%;
+@media (max-width: 840px) {
+   .card:nth-child(odd) {
+      margin-inline: 10px auto;
+      .decor {
+         right: 100%;
+      }
+
+      .inst {
+         right: 1% !important;
+         left: auto !important;
+
+         @media (max-width: 480px) {
+            right: -2% !important;
+         }
+      }
+   }
+   .card:nth-child(even) {
+      margin-inline: auto 10px;
+      .decor {
+         left: 100%;
+      }
+      .inst {
+         left: 1% !important;
+         right: auto !important;
+         @media (max-width: 480px) {
+            left: -2% !important;
+         }
+      }
    }
 }
 
 .card {
+   @media (max-width: 840px) {
+      width: 100%;
+      max-width: 60%;
+      // margin: 0 auto;
+   }
+
    .box_frame {
       position: relative;
 
       .decor {
          position: absolute;
          margin-inline: -10px;
+
+         @media (max-width: 560px) {
+            width: 70px;
+         }
+         @media (max-width: 470px) {
+            width: 60px;
+         }
+         @media (max-width: 390px) {
+            width: 50px;
+         }
       }
 
       .frame {
@@ -63,6 +110,12 @@
          align-items: center;
          justify-content: center;
          text-align: center;
+
+         @media (max-width: 420px) {
+            bottom: 5px;
+            font-size: 1.3rem;
+            line-height: 1.3rem;
+         }
       }
 
       .inst {
@@ -70,6 +123,15 @@
          top: 65%;
          right: 0;
          z-index: 4;
+
+         @media (max-width: 620px) {
+            top: 60%;
+            transform: scale(1.2);
+         }
+
+         @media (max-width: 480px) {
+            transform: scale(1);
+         }
       }
 
       .messages {
@@ -108,6 +170,10 @@
       margin: 0;
       text-align: center;
       margin-top: -4%;
+
+      @media (max-width: 420px) {
+         font-size: 0.9rem !important;
+      }
    }
 }
 

@@ -11,7 +11,7 @@ function getRndInteger(min:number, max:number):number {
 
 const CardPerson = ({data}:{data:ITeam}) => {
    const sideDecor = Math.floor(Math.random() * 2)
-   const angleCard = getRndInteger(-8, 8)
+   const angleCard = getRndInteger(-7, 7)
 
    return (
       <div 

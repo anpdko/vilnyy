@@ -2,10 +2,20 @@
 
    margin-bottom: 100px;
 
+   @media (max-width: 760px) {
+      h1 {
+         max-width: 400px;
+      }
+   }
+
    .cards {
       margin-top: 70px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 60px;
+
+      @media (max-width: 840px) {
+         grid-template-columns: 1fr;
+      }
    }
 }
