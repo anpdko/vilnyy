@@ -3,6 +3,7 @@ import s from './Navbar.module.scss'
 import { NavLink } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import navigation from '../../data/navigation'
+import LinksNetwork from '../../components/LinksNetwork/LinksNetwork';
 
 
 const Navbar = () => {
@@ -34,6 +35,7 @@ const Navbar = () => {
             <span></span>
          </div>
          <nav className={[s.navbar, isHome(), s[toggleActive()]].join(" ")}>
+            <div></div>
             <ul className={s.menu}>
                {navigation.map(nav =>
                   <li key={nav.link}>
@@ -51,6 +53,7 @@ const Navbar = () => {
                   <span className={s[classLang("en")]} onClick={() => srtLang("en")}>eng</span>
                </li>
             </ul>
+            <LinksNetwork className={s.links_network}/>
          </nav>
       </React.Fragment>
    );

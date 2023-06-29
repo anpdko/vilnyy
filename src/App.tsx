@@ -41,7 +41,7 @@ function App() {
               
               <Route path='/contacts' element={<Contasts/>}/>
             </Routes>
-          <LinksNetwork />
+          <LinksNetwork className='links_network'/>
       </div>
     </div>
   );

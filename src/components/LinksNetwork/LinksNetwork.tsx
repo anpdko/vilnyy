@@ -2,12 +2,12 @@ import React from 'react'
 import s from './LinksNetwork.module.scss'
 import { useLocation } from 'react-router-dom'
 
-const LinksNetwork = () => {
+const LinksNetwork = ({className}:{className?: string}) => {
    const { pathname } = useLocation();
    const isHome = () => pathname === "/" ? s.home : ''
 
    return (
-      <div className={[s.links_network, isHome()].join(" ")}>
+      <div className={[s.links_network, className, isHome()].join(" ")}>
          <ul className={s.menu}>
             <li>
                <a href="/">
