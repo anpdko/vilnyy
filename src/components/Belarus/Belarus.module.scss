@@ -1,7 +1,7 @@
 
 
 .belarus{
-   margin-block: 170px 100px;
+   margin-block: 120px 50px;
    p{
       max-width: 1000px;
    }
@@ -11,7 +11,22 @@
       justify-content: flex-end;
       img{
          max-width: 40%;
-         margin: -50px -100px 0 0;
+         margin: -30px -100px 0 0;
+
+         @media (max-width: 960px) {
+            max-width: 60%;
+            margin: -20px -100px 0 0;
+         }
+
+         @media (max-width: 740px) {
+            max-width: 80%;
+            margin: -20px -100px 0 0;
+         }
+
+         @media (max-width: 480px) {
+            max-width: 100%;
+            margin: -10px -70px 0 0;
+         }
       }
    }
 }

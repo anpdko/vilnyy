@@ -23,7 +23,12 @@ const Events = () => {
                   </div>
                   <div className={s.box_info}>
                      <h2>{item.title}</h2>
-                    <ButtonApp color="white" type='link' to={"/community/" + item.id}>Дізнатись більше</ButtonApp>
+                    <ButtonApp 
+                        className={s.btn}
+                        color="white" 
+                        type='link' 
+                        to={"/community/" + item.id}
+                    >Дізнатись більше</ButtonApp>
                   </div>
                   <div className={s.foto}>
                      <img src={item.foto} alt="foto" />
