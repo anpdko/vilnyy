@@ -18,7 +18,7 @@
       z-index: 100;
       inset: 0;
       box-sizing: border-box;
-      padding: 70px 0 30px 0;
+      padding: 70px 0 0px 0;
       overflow-y: auto;
       display: flex;
       align-items: center;
@@ -45,7 +45,7 @@
 
       @media (max-width: 1060px) {
          text-align: end;
-         min-height: 0px;
+         // min-height: 0px;
 
          li{
             display: flex;
@@ -151,6 +151,26 @@
 }
 
 
-// .links_network{
+.links_network{
+   display: none;
    
-// }
+   @media (max-width: 890px) {
+      display: flex;
+      overflow: hidden;
+      
+      ul {
+         transition: 0.4s ease-out;
+         transition-delay: 0.6s;
+
+         opacity: 0;
+         transform: translate(0, 30px);
+      };
+   }
+}
+
+.links_network.active{
+   ul {
+      opacity: 1;
+      transform: translate(0, 0);
+   };
+}

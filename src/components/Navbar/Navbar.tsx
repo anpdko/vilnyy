@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import s from './Navbar.module.scss'
 import { NavLink } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
@@ -15,6 +15,15 @@ const Navbar = () => {
    const isActive = ({ isActive }: { isActive: boolean }) => {
       return isActive ? s.active : ""
    }
+
+   useEffect(() => {
+      if(toggle) {
+         document.body.style.overflow = 'hidden';
+      }
+      else{
+        document.body.style.overflow = 'auto';
+      };
+    }, [toggle]);
 
    const classLang = (langProp: string): string => {
       return lang === langProp ? "active" : ""
@@ -53,7 +62,7 @@ const Navbar = () => {
                   <span className={s[classLang("en")]} onClick={() => srtLang("en")}>eng</span>
                </li>
             </ul>
-            <LinksNetwork className={s.links_network}/>
+            <LinksNetwork className={[s.links_network, s[toggleActive()]].join(' ')}/>
          </nav>
       </React.Fragment>
    );

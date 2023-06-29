@@ -19,9 +19,9 @@
      height: auto;
    }
 
-   @media (max-height: 650px) {
-      padding-top: 380px;
-   }
+   // @media (max-height: 650px) {
+      // padding-top: 380px;
+   // }
 
    .menu {
       display: flex;
@@ -31,8 +31,8 @@
       
       @media (max-width: 890px) {
          flex-direction: row;
-         padding: 5px 60px;
-         height: auto;
+         padding: 20px 60px;
+         // height: auto;
          margin: 0;
       }
 
