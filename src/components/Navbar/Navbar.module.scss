@@ -171,4 +171,8 @@
       opacity: 1;
       transform: translate(0, 0);
    };
+
+   svg {
+      fill: var(--red) !important;
+   }
 }
