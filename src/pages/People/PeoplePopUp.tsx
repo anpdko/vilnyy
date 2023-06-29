@@ -18,7 +18,7 @@ const PeoplePopUp = ({person}:{ person: IPerson }) => {
                <div className={s.body}>
                   <p dangerouslySetInnerHTML={{ __html: person.body }}></p>
                </div>
-               <img src={person.fotoCard} alt="foto-card" />
+               <img className={s.foto_card} src={person.fotoCard} alt="foto-card" />
             </div>
          </div>
       </div>

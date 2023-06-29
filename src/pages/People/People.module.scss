@@ -97,11 +97,15 @@
       inset: 0;
       background: rgba(217, 217, 217, 0.05);
       backdrop-filter: blur(17px);
-      z-index: 2;
+      z-index: 105;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 40px;
+
+      @media (max-width: 640px) {
+         padding: 40px 20px;
+      }
 
       .box_popup{
          border: 5px solid var(--red);
@@ -115,6 +119,11 @@
 
          @media (max-width: 1420px) {
             margin: 50px 20px;
+         }
+
+         @media (max-width: 640px) {
+            margin: 0px 0px !important;
+            padding: 4vh 1.5rem;
          }
 
          &::-webkit-scrollbar {
@@ -133,6 +142,7 @@
             font-family: "Beer money";
             font-weight: 400;
             margin: 0;
+            max-width: 90%;
             font-size: 2rem;
 
             strong {
@@ -160,16 +170,18 @@
             display: flex;
             align-items: flex-start;
 
-            @media (max-width: 820px) {
+            @media (max-width: 920px) {
                flex-direction: column;
             }
 
-            img{
+            .foto_card{
                width: 35%;
                max-width: 400px;
 
-               @media (max-width: 820px) {
+               @media (max-width: 920px) {
                   margin: 0 auto;
+                  width: 100%;
+                  max-width: 350px;
                }
             }
          }
