@@ -127,7 +127,7 @@
          }
 
          &::-webkit-scrollbar {
-            width: 10px;
+            width: 8px;
             background-color: rgba(26, 24, 47, 0.15);
             border-radius: 5px;
             height: 200px;
@@ -135,7 +135,7 @@
          
          &::-webkit-scrollbar-thumb {
                background: rgba(255, 0, 0, 0.101);
-               border-radius: 10px;
+               border-radius: 8px;
          }
 
          h2{
@@ -144,6 +144,10 @@
             margin: 0;
             max-width: 90%;
             font-size: 2rem;
+
+            @media (max-width: 768px) {
+               max-width: 80%;
+            }
 
             strong {
                color: var(--red);
@@ -160,6 +164,12 @@
             justify-content: center;
             background-color: var(--red);
             border-radius: 50%;
+
+            @media (max-width: 480px) {
+               top: 15px;
+               right: 15px;
+            }
+
             i{
                font-size: 25px;
                color: var(--white);

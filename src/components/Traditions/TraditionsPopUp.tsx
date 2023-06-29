@@ -23,7 +23,7 @@ const TraditionsPopUp = ({tradition, index}:ITraditionsPopUp) => {
                   <h2>{index+1}. {tradition.titleFull}</h2>
                   <p>{tradition.body}</p>
                </div>
-               <img src={tradition.fotoCard} alt="foto-card" />
+               <img className={s.foto_card} src={tradition.fotoCard} alt="foto-card" />
             </div>
          </div>
       </div>
