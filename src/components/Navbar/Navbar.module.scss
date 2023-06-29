@@ -32,26 +32,14 @@
    }
 
    @media (max-width: 560px) {
-      align-items: flex-end;
+      align-items: flex-start;
    }
 
 
    .menu {
-      padding: 0;
-      padding: 0;
       display: flex;
       flex-direction: column;
       gap: 17px;
-
-      @media (max-width: 1060px) {
-         text-align: end;
-         // min-height: 0px;
-
-         li{
-            display: flex;
-            justify-content: flex-end;
-         }
-      }
 
       @media (max-width: 560px) {
          padding-right: 60px;
@@ -105,22 +93,22 @@
 .navbar.home{
    li, a {
       color: var(--white);
+
+      @media (max-width: 1060px) {
+         color: #000;
+      }
    }
 }
 
 .toggle{
    display: none;
    z-index: 101;
-   position: fixed;
-   background-color: #ffffffb2;
-   backdrop-filter: blur(5px);
-   box-shadow: 0 0 2px #c9c9c9;
-   border-radius: 50%;
-   padding: 20px 15px;
+   position: relative;
+   padding: 10px 15px 30px 15px;
    right: 15px;
    top: 25px;
    flex-direction: column;
-   align-items: center;
+   align-items: flex-start;
    gap: 7px;
    transition: 0.5s;
 
@@ -136,17 +124,26 @@
    }
 }
 
+.toggle.home{
+   span{
+      background-color: #fff;
+   }
+
+}
+
 .toggle.active{
-   right: 40px;
+   span{
+      background-color: var(--red);
+   }
 
    span:nth-child(1){
       width: 20px;
-      transform: rotate(-40deg) translate(-10px, -2px);
+      transform: rotate(-40deg) translate(-4px, 3px);
    }
 
    span:nth-child(3){
       width: 20px;
-      transform: rotate(40deg) translate(-10px, 2px);;
+      transform: rotate(40deg) translate(-4px, -3px);
    }
 }
 

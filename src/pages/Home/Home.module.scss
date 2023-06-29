@@ -30,7 +30,14 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding-right: 250px;
+      padding-right: 15%;
+
+      @media (max-width: 1060px) {
+         padding-right: 5%;
+      }
+      @media (max-width: 640px) {
+         padding-right: 0;
+      }
 
       .box_logo{
          text-align: end;
@@ -38,6 +45,12 @@
          .logo {
             max-width: 45.8333rem;
             width: 100%;
+
+            @media (max-width: 640px) {
+               max-width: auto;
+               width: 145%;
+               margin-left: -20%;
+            }
          }
          h1 {
             color: #F6F6F6;
@@ -45,6 +58,21 @@
             font-family: 'Rubik Glitch', cursive;
             font-weight: 400;
             margin: -3.75rem 40px 100px 0;
+
+            @media (max-width: 790px) {
+               font-size: 4.4rem;
+               margin: -2.5rem 40px 100px 0;
+            }
+
+            @media (max-width: 640px) {
+               font-size: 3.7rem;
+               text-align: center;
+               margin: -1.5rem auto 100px auto;
+            }
+
+            @media (max-width: 370px) {
+               font-size: 3rem;
+            }
          }
       }
    }

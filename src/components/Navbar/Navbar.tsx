@@ -36,7 +36,7 @@ const Navbar = () => {
    return (
       <React.Fragment>
          <div 
-            className={[s.toggle, s[toggleActive()]].join(' ')} 
+            className={[s.toggle, isHome(), s[toggleActive()]].join(' ')} 
             onClick={() => setToggle(!toggle)}
          >
             <span></span>
@@ -62,6 +62,7 @@ const Navbar = () => {
                   <span className={s[classLang("en")]} onClick={() => srtLang("en")}>eng</span>
                </li>
             </ul>
+            <div></div>
             <LinksNetwork className={[s.links_network, s[toggleActive()]].join(' ')}/>
          </nav>
       </React.Fragment>
