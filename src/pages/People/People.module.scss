@@ -99,9 +99,11 @@
       backdrop-filter: blur(17px);
       z-index: 105;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       padding: 40px;
+      max-height: 100%;
+      overflow-y: auto;
 
       @media (max-width: 640px) {
          padding: 40px 20px;
@@ -112,10 +114,8 @@
          background-color: var(--white);
          position: relative;
          margin: 50px 100px;
-         max-height: 100%;
          padding: 5vh 3rem;
          box-sizing: border-box;
-         overflow-y: auto;
 
          @media (max-width: 1420px) {
             margin: 50px 20px;
