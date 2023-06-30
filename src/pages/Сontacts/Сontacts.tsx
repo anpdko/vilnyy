@@ -21,13 +21,13 @@ const Сontacts = () => {
 
 
          <footer>
-            <div className={s.info}>
+            <div className={s.info_footer}>
                <h3>Контакти</h3>
                <p>Георгій, СЕО</p>
                <p>+380667481572</p>
                <p>Georgiy.Dekhtyarenko@vilnyy.co</p>
             </div>
-            <ButtonApp type='link' color="white">Заїхати на VILNYY</ButtonApp>
+            <ButtonApp className={s.btn} type='link' color="white">Заїхати на VILNYY</ButtonApp>
          </footer>
       </div>
    );

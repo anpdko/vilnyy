@@ -30,9 +30,14 @@
             padding: 0;
          }
 
+         @media (max-width: 860px) {
+            align-items: center;
+         }  
+
          @media (max-width: 700px) {
             margin-top: 20px;
          }
+
 
          .comment_add{
             max-width: 100%;  
@@ -40,9 +45,8 @@
             display: none;
 
             @media (max-width: 860px) {
-               max-width: 100%;  
-               width: 100%;  
                display: block;
+               margin: 0 -4% 0 0;
             }   
          }
 
@@ -50,15 +54,27 @@
             max-width: 80%;  
 
             @media (max-width: 860px) {
-               max-width: 100%; 
-               width: 100%;  
                object-fit: cover;
                object-position: bottom;
                aspect-ratio: 2.1 / 1;
-               margin: -10px 7% 0 0;
+               margin: -10px 4% 0 0;
             }  
-
          }
+
+         @media (max-width: 860px) {
+            img{
+               max-width: 80% !important;  
+               width: 80% !important;
+            }
+         }
+
+         @media (max-width: 520px) {
+            img{
+               max-width: 100% !important;  
+               width: 100% !important;
+            }
+         }
+
       }
       .phone{
          width: 100%;

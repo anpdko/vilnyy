@@ -2,7 +2,16 @@
 
 .contasts{
    .info{
-      margin-top: 150px;
+      margin-top: 100px;
+
+      @media (max-width: 640px) {
+         margin-top: 80px;
+      }
+
+      @media (max-width: 480px) {
+         margin-top: 50px;
+      }
+
       p{
          max-width: 1100px;
          color: #000;
@@ -21,6 +30,14 @@
       p.max_text{
          margin-top: 3rem;
          max-width: 600px;
+
+         @media (max-width: 1060px) {
+            max-width: 500px;
+         }
+
+         @media (max-width: 780px) {
+            max-width: 400px;
+         }
       }
    
       h2{
@@ -30,21 +47,43 @@
          margin: -40px 30px 0 0;
          font-family: 'Rubik Glitch', cursive;
          font-weight: 400;
+
+         @media (max-width: 1320px) {
+            font-size: 9rem;
+         }
+   
+         @media (max-width: 780px) {
+            font-size: 6rem;
+         }
+
+         @media (max-width: 640px) {
+            display: none;
+         }
+         
       }
    }
 
    footer{
       box-sizing: border-box;
       width: calc(100% + 100px);
-      right: 0;
       padding: 2rem 3.3rem;
       background-color: var(--red);
       color: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      
-      .info{
+      flex-wrap: wrap;
+
+      @media (max-width: 670px) {
+         width: calc(100% + 100px);
+         margin-left: -50px;
+      }
+
+      @media (max-width: 640px) {
+         margin-top: 40px;
+      }
+
+      .info_footer{
          display: flex;
          flex-direction: column;
          gap: 0.4rem;
@@ -62,6 +101,10 @@
             font-size: 1rem;
             font-family: 'Open Sans';
          }
+      }
+
+      .btn{
+         margin: 20px -2px;
       }
    }
 }

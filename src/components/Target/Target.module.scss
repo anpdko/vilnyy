@@ -1,10 +1,15 @@
 
 
 .target{
-   margin-top: 100px;
+   margin-top: 20px;
    display: grid;
    grid-template-columns: 3fr 2fr;
-   gap: 80px;
+   gap: 20px;
+
+   @media (max-width: 680px) {
+      grid-template-columns: 1fr;
+   }
+
    .left{
       display: flex;
       flex-direction: column;
@@ -12,6 +17,11 @@
 
       p{
          margin-top: 100px;
+
+         @media (max-width: 680px) {
+            margin-top: 40px;
+         }
+      
 
          strong{
             color: var(--red);
@@ -22,21 +32,55 @@
       }
       img{
          max-width: 100%;
+
+         @media (max-width: 1060px) {
+            max-width: 115%;
+            margin-right: -10%;
+         }
+
+         @media (max-width: 680px) {
+            max-width: 115%;
+            margin-right: -7%;
+         }
       }
    }
 
    .right{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding-left: 50px;
+
+      @media (max-width: 680px) {
+         transform: scaleX(-1) translateX(50px);
+      }
+
       img{
          width: 90%;
       }
 
       .foto1, .foto3{
          margin-left: -100px;
+
+         @media (max-width: 680px) {
+            margin-top: -70px;
+            margin-left: -100px;
+            align-self: flex-start;
+         }
       }
 
       .foto2{
          margin: -100px 0;
+         
+
+         @media (max-width: 680px) {
+            align-self: flex-end;
+            margin: -50% 0;
+            margin-right: -20px;
+         }
       }
    }
 }
