@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom'
 import './App.scss';
 import 'slick-carousel/slick/slick.css';
@@ -16,11 +16,16 @@ import About from './pages/About/About'
 import Community from './pages/Community/Community';
 
 function App() {
+  const [pathStorage, setPathStorage] = useState("")
   const { pathname } = useLocation();
 
 
   useEffect(() => {
+    const mainPath = pathname.split("/")[1]
+    if(mainPath !== pathStorage){
       window.scrollTo(0, 0);
+      setPathStorage(mainPath)
+    }
   }, [pathname])
 
   return (

@@ -8,7 +8,6 @@ import Slider from "react-slick";
 
 const Home = () => {
    const settings = {
-      vertical: true,
       arrows: false,
       dots: false,
       fade: true,
@@ -34,7 +33,6 @@ const Home = () => {
                   <img src={homeBg3Img} alt='homeBg3Img'/>
                </div>
             </Slider>
-            {/* <img src={homeBg1Img} alt="back" /> */}
             <div className={s.box_filter}></div>
          </div>
          <div className={s.content}>
