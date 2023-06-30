@@ -22,9 +22,14 @@
    font-size: 4.2rem;
    font-weight: 400;
    font-family: 'Rubik Glitch'; 
-   display: flex;
+   display: inline-flex;
+   justify-content: flex-start;
    align-items: center;
    gap: 15px;
+
+   img{
+      width: 2.7rem;
+   }
 
    @media (max-width: 1420px) {
       font-size: 3.2rem;
@@ -36,10 +41,10 @@
 
    @media (max-width: 480px) {
       font-size: 2.5rem;
-   }
-
-   img{
-      width: 2.7rem;;
+      gap: 10px
+      img{
+         width: 2.4rem;
+      }
    }
 }
 

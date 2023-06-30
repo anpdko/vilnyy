@@ -23,7 +23,7 @@ const Online = () => {
    return (
       <div className={s.online}>
          <h1 className='title'>
-            Онлайн-спільнота
+            <span>Онлайн-спільнота</span>
             <img src={phoneIcon} alt="icons" />
          </h1>
          <div className={s.box_content}>
