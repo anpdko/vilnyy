@@ -271,12 +271,14 @@
             position: absolute;
             top: 25px;
             right: 25px;
-            padding: 5px 10px;
+            padding: 4px 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: var(--red);
             border-radius: 50%;
+            cursor: pointer;
+            border: none;
 
             @media (max-width: 480px) {
                top: 15px;
