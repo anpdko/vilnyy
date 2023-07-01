@@ -22,11 +22,12 @@ function App() {
 
   useEffect(() => {
     const mainPath = pathname.split("/")[1]
+    console.log("wef")
     if(mainPath !== pathStorage){
       window.scrollTo(0, 0);
       setPathStorage(mainPath)
     }
-  }, [pathname])
+  }, [pathname, pathStorage])
 
   return (
     <div className="App">
