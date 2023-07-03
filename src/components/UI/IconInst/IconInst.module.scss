@@ -12,5 +12,13 @@
    svg {
       fill: var(--red);
       transform: scale(1.2);
+      transition: 0.3s;
+   }
+}
+
+.link:hover {
+   svg {
+      fill: var(--red-hover);
+      transform: scale(1.3);
    }
 }

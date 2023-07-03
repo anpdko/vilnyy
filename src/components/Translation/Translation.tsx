@@ -26,10 +26,10 @@ const Translation = ({ className }: ITranslation) => {
 
     return (
         <div onClick={handleLenguageChange} className={`${s.translation} ${className}`}>
-            <li className={s.lengs}>
+            <div className={s.lengs}>
                 <span className={s[classLang("uk")]} onClick={() => handleLenguageChange()}>укр</span>/
                 <span className={s[classLang("en")]} onClick={() => handleLenguageChange()}>eng</span>
-            </li>
+            </div>
         </div>
     );
 };

@@ -14,18 +14,32 @@
 
    i{
       font-size: 1.8em;
+      transition: 0.3s;
    }
 }
 
 .btn.red{
    color: var(--white);
    background-color: var(--red);
+   transition: 0.2s;
+}
+
+.btn:hover{
+   background-color: var(--red-hover);
+   i{
+      transform: translateX(4px);
+   }
 }
 
 .btn.white{
    color: var(--red);
    background-color: var(--white);
    border: 3px solid var(--red);
+   transition: 0.2s;
+}
+
+.btn.white:hover{
+   color: var(--red-hover);
 }
 
 .btn.link{

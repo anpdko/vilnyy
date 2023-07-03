@@ -122,14 +122,14 @@ const teamData: IDataTeam[] = [
          discription: "Я дотична до того, чого ще ніколи не зустрічала. До місця підсилення, важливої місії й унікальних цінностей.",
          job: "SMM manager",
          foto: YuliaImg,
-         inst: "https://www.instagram.com/"
+         inst: "https://instagram.com/shakhtar_girl?igshid=YmMyMTA2M2Y="
       },
       uk: {
          name: "Юлія Пилипенко",
          discription: "Я дотична до того, чого ще ніколи не зустрічала. До місця підсилення, важливої місії й унікальних цінностей.",
          job: "смм-менеджерка",
          foto: YuliaImg,
-         inst: "https://www.instagram.com/"
+         inst: "https://instagram.com/shakhtar_girl?igshid=YmMyMTA2M2Y="
       }
 
    },
@@ -140,14 +140,14 @@ const teamData: IDataTeam[] = [
          discription: "I feel involved in the process of building communities of the active and caring people in the country.",
          job: "graphic designer",
          foto: JanuszImg,
-         inst: "https://www.instagram.com/"
+         inst: "https://instagram.com/chelebidzhi?igshid=YmMyMTA2M2Y="
       },
       uk: {
          name: "Януш Сипухіна",
          discription: "Відчуваю себе причетною до побудови спільнот активних і небайдужих в країні людей.",
          job: "графічна дизайнерка",
          foto: JanuszImg,
-         inst: "https://www.instagram.com/"
+         inst: "https://instagram.com/chelebidzhi?igshid=YmMyMTA2M2Y="
       }
    },
 
@@ -158,14 +158,14 @@ const teamData: IDataTeam[] = [
          discription: "I see potential in VILNYY and power to develop this project further.",
          job: "community manager",
          foto: ArynaImg,
-         inst: "https://www.instagram.com/"
+         inst: "https://instagram.com/aryna.serhiyivna?igshid=YmMyMTA2M2Y="
       },
       uk: {
          name: "Арина Гомон",
          discription: "Бачу потенціал у Вільному та потужності для розвитку проєкту.",
          job: "комʼюніті-менеджерка",
          foto: ArynaImg,
-         inst: "https://www.instagram.com/"
+         inst: "https://instagram.com/aryna.serhiyivna?igshid=YmMyMTA2M2Y="
       }
 
    },
@@ -176,14 +176,14 @@ const teamData: IDataTeam[] = [
          discription: "I like working on cool initiative projects.",
          job: "HR manager",
          foto: VladImg,
-         inst: "https://www.instagram.com/"
+         inst: "https://instagram.com/d.waterplay?igshid=YmMyMTA2M2Y="
       },
       uk: {
          name: "Влад Дармограй",
          discription: "Мені подобається працювати в класних ініціативах.",
          job: "HR-менеджер",
          foto: VladImg,
-         inst: "https://www.instagram.com/"
+         inst: "https://instagram.com/d.waterplay?igshid=YmMyMTA2M2Y="
       }
    },
    {
@@ -193,14 +193,14 @@ const teamData: IDataTeam[] = [
          discription: "I like the ecosystem created by VILNYY. «People change people» that says it all",
          job: "manager of physical comfort",
          foto: SashaImg,
-         inst: "https://www.instagram.com/"
+         inst: "https://instagram.com/aall.bolsh?igshid=YmMyMTA2M2Y="
       },
       uk: {
          name: "Олександр Большаков",
          discription: "Подобається екосистема, яку створюють VILNYY. «Людей змінюють люди» цим все сказано.",
          job: "менеджер фізичного комфорту",
          foto: SashaImg,
-         inst: "https://www.instagram.com/"
+         inst: "https://instagram.com/aall.bolsh?igshid=YmMyMTA2M2Y="
       }
    },
 ]
