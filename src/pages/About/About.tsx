@@ -4,6 +4,7 @@ import History from '../../components/History/History';
 import Mission from '../../components/Mission/Mission';
 import Values from '../../components/Values/Values';
 import Work from '../../components/Work/Work';
+import Target from '../../components/Target/Target';
 
 const About = () => {
    return (
@@ -12,6 +13,7 @@ const About = () => {
          <Mission/>
          <Values/>
          <Work/>
+         <Target/>
       </div>
    );
 };

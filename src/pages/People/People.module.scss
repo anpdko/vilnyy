@@ -154,11 +154,12 @@
             }
 
             .text_inst{
+               width: 0;
                height: 100%;
                display: inline-flex;
                align-items: flex-end;
                justify-content: center;
-               transform: scale(0.7) translateY(10px);
+               transform: scale(0.7) translate(20px, 12px);
                padding-left: 15px;
             }
 
@@ -199,6 +200,12 @@
             align-items: flex-start;
             align-items: center;
             gap: 170px;
+
+            h2{
+               img{
+                  width: 1.1em;
+               }
+            }
 
             @media (max-width: 1700px) {
                gap: 100px;

@@ -2,7 +2,6 @@ import React from 'react'
 import s from './Сontacts.module.scss'
 import ButtonApp from '../../components/UI/ButtonApp/ButtonApp';
 import Online from '../../components/Online/Online';
-import Target from '../../components/Target/Target';
 import { useTranslation } from 'react-i18next';
 
 const Сontacts = () => {
@@ -10,7 +9,6 @@ const Сontacts = () => {
    return (
       <div className={s.contasts}>
          <Online/>
-         <Target/>
 
          <div className={s.info}>
             <p> <strong>VILNYY</strong> {t("is a non-profit organization, so we need financial support for the stable functioning and constant improvement of our projects.")} </p>
