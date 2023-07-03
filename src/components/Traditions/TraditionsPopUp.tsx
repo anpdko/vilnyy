@@ -31,16 +31,18 @@ const TraditionsPopUp = ({tradition, index}:ITraditionsPopUp) => {
    return (
       <NoScrollContainer>
       <div className={s.bg_popup}>
-         <div className={s.box_popup}>
-            <button className={s.close} onClick={handleClose}>
-               <i className="bi bi-x-lg"></i>
-            </button>
-            <div className={s.col}>
-               <div className={s.body}>
-                  <h2>{index+1}. {tradition.titleFull}</h2>
-                  <p>{tradition.body}</p>
+         <div className={s.bg_height}>
+            <div className={s.box_popup}>
+               <button className={s.close} onClick={handleClose}>
+                  <i className="bi bi-x-lg"></i>
+               </button>
+               <div className={s.col}>
+                  <div className={s.body}>
+                     <h2>{index+1}. {tradition.titleFull}</h2>
+                     <p>{tradition.body}</p>
+                  </div>
+                  <img className={s.foto_card} src={tradition.fotoCard} alt="foto-card" />
                </div>
-               <img className={s.foto_card} src={tradition.fotoCard} alt="foto-card" />
             </div>
          </div>
       </div>
