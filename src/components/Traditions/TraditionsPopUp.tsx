@@ -15,13 +15,13 @@ const TraditionsPopUp = ({tradition, index}:ITraditionsPopUp) => {
    const navigate = useNavigate();
 
    useEffect(()=>{
-      gsap.from(`.${s.bg_popup}`, { delay:0.2, duration: 0.2, opacity: 0, ease: 'power3.easeIn' })
-      gsap.from(`.${s.box_popup}`, { delay:0, duration: 0.7, opacity: 0, scale: 0, ease: 'power3.easeIn' })
+      gsap.from(`.${s.bg_popup}`, { delay: 0.2, duration: 0.2, opacity: 0, ease: 'power3.easeIn' })
+      gsap.from(`.${s.box_popup}`, { delay: 0, duration: 0.5, opacity: 0, scale: 0, ease: 'power3.easeIn' })
    }, [])
 
    const handleClose = () => {
-      gsap.to(`.${s.bg_popup}`, { duration: 0.4, opacity: 0, ease: 'power3.easeOut'})
-      gsap.to(`.${s.box_popup}`, { duration: 0.4, opacity: 0, scale: 0, ease: 'power3.easeOut',
+      gsap.to(`.${s.bg_popup}`, { duration: 0.2, opacity: 0, ease: 'power3.easeOut' })
+      gsap.to(`.${s.box_popup}`, { duration: 0.3, opacity: 0, scale: 0, ease: 'power3.easeOut',
       onComplete: () => {
          navigate('/community');
       } })

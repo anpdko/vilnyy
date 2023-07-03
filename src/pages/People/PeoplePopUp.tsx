@@ -10,7 +10,7 @@ const PeoplePopUp = ({ person }: { person: IPerson }) => {
    const navigate = useNavigate();
 
    useEffect(() => {
-      gsap.from(`.${s.bg_popup}`, { delay: 0, duration: 0.2, opacity: 0, ease: 'power3.easeIn' })
+      gsap.from(`.${s.bg_popup}`, { delay: 0.2, duration: 0.2, opacity: 0, ease: 'power3.easeIn' })
       gsap.from(`.${s.box_popup}`, { delay: 0, duration: 0.5, opacity: 0, scale: 0, ease: 'power3.easeIn' })
    }, [])
 
