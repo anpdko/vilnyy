@@ -10,4 +10,8 @@
       text-transform: uppercase;
       color: var(--red);
    }
+
+   span:hover{
+      color: var(--red) !important;
+   }
 }

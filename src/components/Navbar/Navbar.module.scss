@@ -69,7 +69,7 @@
       color: #000;
    }
    a.active {
-      font-size: 1.4rem !important;
+      font-size: 1.8rem !important;
       color: var(--red);
    }
 
@@ -164,3 +164,11 @@
       fill: var(--red) !important;
    }
 }
+
+
+.navbar{
+   a:hover{
+      color: var(--red) !important;
+   }
+}
+
