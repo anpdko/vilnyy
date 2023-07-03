@@ -1,5 +1,12 @@
 .events {
+   margin-top: 120px;
    margin-bottom: 50px;
+
+
+   p.text{
+      max-width: 800px;
+      margin: 20px 0 50px 0;
+   }
 
    .items {
       display: flex;

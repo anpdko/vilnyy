@@ -48,6 +48,7 @@ const Events = () => {
             <strong>{t("Open events")}</strong>
             <img src={admitIcon} alt="icon" />
          </h1>
+         <p className={s.text}>{t("To widen the community and attract new people, we organize various events for everyone.  Here are three of our favorites:")}</p>
          <div className={s.items}>
             {eventsData.map((item, index) =>
                <CardEvents key={item.id} data={item[langPerson]} id={item.id} index={index} />
