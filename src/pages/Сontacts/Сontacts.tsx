@@ -3,31 +3,33 @@ import s from './Сontacts.module.scss'
 import ButtonApp from '../../components/UI/ButtonApp/ButtonApp';
 import Online from '../../components/Online/Online';
 import Target from '../../components/Target/Target';
+import { useTranslation } from 'react-i18next';
 
 const Сontacts = () => {
+   const {t} = useTranslation()
    return (
       <div className={s.contasts}>
          <Online/>
          <Target/>
 
          <div className={s.info}>
-            <p> <strong>VILNYY</strong> – неприбуткова організація, тому для функціонування та покращення наших проєктів потребуємо фінансового підслення. </p>
-            <p>Задонатити можна тут. Дякуємо! ❤️</p>
-            <ButtonApp type='link'>Донат</ButtonApp>
-            <p className={s.max_text}>З нашим фінансовим звітом за 2022 рік можеш ознайомитися тут</p>
-            <ButtonApp type='link'>Фінансовий звіт</ButtonApp>
+            <p> <strong>VILNYY</strong> {t("is a non-profit organization, so we need financial support for the stable functioning and constant improvement of our projects.")} </p>
+            <p>{t("You can donate here. Thank you! ❤️")}</p>
+            <ButtonApp type='link'>{t("Donate")}</ButtonApp>
+            <p className={s.max_text}>{t("You can read our financial report for 2022 here")}</p>
+            <ButtonApp type='link'>{t("Financial report")}</ButtonApp>
             <h2>2022</h2>
          </div>
 
 
          <footer>
             <div className={s.info_footer}>
-               <h3>Контакти</h3>
-               <p>Георгій, СЕО</p>
+               <h3>{t("Contacts")}</h3>
+               <p>{t("George, CEO")}</p>
                <p>+380667481572</p>
-               <p>Georgiy.Dekhtyarenko@vilnyy.co</p>
+               <p>Georgiy.Dekhtyarenko@vilnyy.com</p>
             </div>
-            <ButtonApp className={s.btn} type='link' color="white">Заїхати на VILNYY</ButtonApp>
+            <ButtonApp className={s.btn} type='link' color="white">{t("Go to VILNYY")}</ButtonApp>
          </footer>
       </div>
    );

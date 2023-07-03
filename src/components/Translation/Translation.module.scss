@@ -1,0 +1,13 @@
+
+.translation{
+   display: flex;
+   cursor: pointer;
+   gap: 5px;
+   span{
+      transition: 0.2s;
+   }
+   span.active{
+      text-transform: uppercase;
+      color: var(--red);
+   }
+}

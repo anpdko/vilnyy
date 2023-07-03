@@ -4,13 +4,15 @@ import { NavLink } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import navigation from '../../data/navigation'
 import LinksNetwork from '../../components/LinksNetwork/LinksNetwork';
+import Translation from '../Translation/Translation'
+import { useTranslation } from 'react-i18next'
 
 
 const Navbar = () => {
    const [toggle, setToggle] = useState(false)
-   const [lang, srtLang] = useState('uk')
    const { pathname } = useLocation();
    const isHome = () => pathname === "/" ? s.home : ''
+   const { t } = useTranslation()
 
    const isActive = ({ isActive }: { isActive: boolean }) => {
       return isActive ? s.active : ""
@@ -25,9 +27,6 @@ const Navbar = () => {
       };
     }, [toggle]);
 
-   const classLang = (langProp: string): string => {
-      return lang === langProp ? "active" : ""
-   }
 
    const toggleActive = (): string => {
       return toggle ? "active" : ""
@@ -53,14 +52,11 @@ const Navbar = () => {
                         onClick={() => setToggle(false)} 
                         className={isActive}
                      >
-                        {nav.title}
+                        {t(nav.title)}
                      </NavLink>
                   </li>
                )}
-               <li className={s.lengs}>
-                  <span className={s[classLang("uk")]} onClick={() => srtLang("uk")}>укр</span>/
-                  <span className={s[classLang("en")]} onClick={() => srtLang("en")}>eng</span>
-               </li>
+               <li><Translation/></li>
             </ul>
             <div></div>
             <LinksNetwork className={[s.links_network, s[toggleActive()]].join(' ')}/>

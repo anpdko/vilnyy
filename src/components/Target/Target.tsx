@@ -1,18 +1,25 @@
 import React from 'react'
 import s from './Target.module.scss'
 import targetImg from '../../assets/images/target/target.png'
+import targetEngImg from '../../assets/images/target/target_eng.png'
 import foto1Img from '../../assets/images/target/foto1.png'
 import foto2Img from '../../assets/images/target/foto2.png'
 import foto3Img from '../../assets/images/target/foto3.png'
+import { useTranslation } from 'react-i18next'
 
 const Target = () => {
+   const {t, i18n} = useTranslation()
    return (
       <div className={s.target}>
          <div className={s.left}>
             <p>
-               <strong>Наша амбітна ціль</strong> — це докорінно змінити систему спів проживання та взаємодії студентів в університетських гуртожитках. Один з перших кроків для її досягнення — це відкриття спеціальних колівінгів для студентів Київської школи економіки KSE. Вони функціонують за правилами та цінностями всіх наших колівінгів, але проживати там можуть тільки студенти KSE. Це перша та унікальна офіційно зареєстрована практика в Україні. Коліверка Марійка так відгукується про досвід на цьому колівінгу:
+               <strong>{t("Our ambitious goal")} </strong>
+               {t("is to fundamentally change the system of cohabitation and student interaction in university dorms.  One of the first steps is the opening of special living quarters for students of the Kyiv School of Economics, KSE.  They operate according to the rules and values ​​of all our co-livings, but only KSE students can live there.  This is the first and unique officially registered practice in Ukraine.  Co-liver Mariyka comments about her experience at this co-living in the following way:")}
             </p>
-            <img src={targetImg} alt="target" />
+            {i18n.language === "uk" 
+               ?<img src={targetImg} alt="target" /> 
+               :<img src={targetEngImg} alt="target" />
+            }
          </div>
          <div className={s.right}>
             <img className={s.foto1} src={foto1Img} alt="foto1" />

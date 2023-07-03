@@ -5,8 +5,10 @@ import homeBg2Img from '../../assets/images/home-bg2.png'
 import homeBg3Img from '../../assets/images/home-bg3.png'
 import logoImg from '../../assets/images/logo.png'
 import Slider from "react-slick";
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+   const { t } = useTranslation();
    const settings = {
       arrows: false,
       dots: false,
@@ -38,7 +40,7 @@ const Home = () => {
          <div className={s.content}>
             <div className={s.box_logo}>
                <img className={s.logo} src={logoImg} alt="back" />
-               <h1>спільнота</h1>
+               <h1>{t('community')}</h1>
             </div>
 
          </div>

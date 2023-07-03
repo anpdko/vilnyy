@@ -6,8 +6,10 @@ import phone2Img from '../../assets/images/online/phone2.png'
 import com1Img from '../../assets/images/online/com1.png'
 import com2Img from '../../assets/images/online/com2.png'
 import Slider from "react-slick";
+import {useTranslation} from 'react-i18next'
 
 const Online = () => {
+   const {t} = useTranslation()
    const settings = {
       dots: true,
       fade: true,
@@ -23,12 +25,12 @@ const Online = () => {
    return (
       <div className={s.online}>
          <h1 className='title'>
-            <span>Онлайн-спільнота</span>
+            <span>{t("Online community")}</span>
             <img src={phoneIcon} alt="icons" />
          </h1>
          <div className={s.box_content}>
             <div className={s.text}>
-               <p>Ми прагнемо ділитися нашими ідеями та цінностями не тільки з коліверами, а й з онлайн-спільнотою в Instagram. За весь час роботи ми зібрали понад 12 тис. активних підписників, з якими постійно спілкуємося про досвід та практики спільнотного життя. Також часто розповідаємо про наших талановитих коліверів, популяризуємо їхні проєкти та підприємництва. Регулярно проводимо та підсилюємо збори на потреби ЗСУ. Просуваємо ідеї гідності та проактивності. Підписуйся за посиланням.</p>
+               <p>{t("We strive to share our ideas and values ​​not only with co-livers, but also with the online community on Instagram. Since the start of VILNYY, we have collected more than 12 thousand active subscribers, with whom we constantly communicate about the experience and practices of community life.  We also often talk about our talented co-livers and popularize their projects and businesses.  We regularly hold special meetings where we collect donations for the needs of the Armed Forces of Ukraine. We promote the ideas of dignity and pro-activity. Subscribe via the link.")}</p>
                <img className={s.comment_add} src={com2Img} alt="com2" />
                <img className={s.comment_text} src={com1Img} alt="com1" />
             </div>
