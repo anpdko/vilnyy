@@ -27,7 +27,7 @@ const PeoplePopUp = ({ person }: { person: IPerson }) => {
    return (
       <NoScrollContainer>
          <div className={s.bg_popup}>
-            <div className={s.box_popup}>
+            <div className={s.box}>
                <button className={s.close} onClick={handleClose}>
                   <i className="bi bi-x-lg"></i>
                </button>

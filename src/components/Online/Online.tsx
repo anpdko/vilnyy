@@ -3,8 +3,8 @@ import s from './Online.module.scss'
 import phoneIcon from '../../assets/images/icons/phone.png'
 import phone1Img from '../../assets/images/online/phone1.png'
 import phone2Img from '../../assets/images/online/phone2.png'
-import com1Img from '../../assets/images/online/com1.png'
-import com2Img from '../../assets/images/online/com2.png'
+import com1Img from '../../assets/images/online/com_1.png'
+import com2Img from '../../assets/images/online/com_2.png'
 import Slider from "react-slick";
 import {useTranslation} from 'react-i18next'
 

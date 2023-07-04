@@ -7,13 +7,14 @@ import PeoplePopUp from './PeoplePopUp'
 import IconInst from '../../components/UI/IconInst/IconInst';
 import { useTranslation } from 'react-i18next';
 import { IPerson } from '../../data/people'
+import WrapperPage from '../../components/WrapperPage/WrapperPage';
 
-interface ICartPerson{
-   person:IPerson, 
-   id:string | number
+interface ICartPerson {
+   person: IPerson,
+   id: string | number
 }
 
-const CartPerson = ({person, id}:ICartPerson) => {
+const CartPerson = ({ person, id }: ICartPerson) => {
    const { t } = useTranslation();
    return (
       <div className={s.card}>
@@ -36,20 +37,22 @@ const People = () => {
    const langPerson = i18n.language === "uk" ? "uk" : "en";
 
    return (
-      <div className={s.people}>
-         <h1 className='title2'>{t("Our greatest value is the people who choose to live in")} <strong>VILNYY</strong></h1>
-         <div className={s.cards}>
-            {peopleData.map(person =>
-            <CartPerson key={person.id} id={person.id} person= {person[langPerson]}/>
+      <WrapperPage>
+         <div className={s.people}>
+            <h1 className='title2'>{t("Our greatest value is the people who choose to live in")} <strong>VILNYY</strong></h1>
+            <div className={s.cards}>
+               {peopleData.map(person =>
+                  <CartPerson key={person.id} id={person.id} person={person[langPerson]} />
+               )}
+            </div>
+
+            {peopleData.map((person) =>
+               Number(id) === person.id && (
+                  <PeoplePopUp key={person.id} person={person[langPerson]} />
+               )
             )}
          </div>
-
-         {peopleData.map((person) =>
-            Number(id) === person.id && (
-               <PeoplePopUp key={person.id} person={person[langPerson]} />
-            )
-         )}
-      </div>
+      </WrapperPage>
    );
 };
 export default People

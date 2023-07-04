@@ -6,6 +6,7 @@ import homeBg3Img from '../../assets/images/home-bg3.png'
 import logoImg from '../../assets/images/logo.png'
 import Slider from "react-slick";
 import { useTranslation } from 'react-i18next';
+import WrapperPage from '../../components/WrapperPage/WrapperPage'
 
 const Home = () => {
    const { t } = useTranslation();
@@ -22,29 +23,30 @@ const Home = () => {
    };
 
    return (
-      <div className={s.home}>
-         <div className={s.bg}>
-            <Slider {...settings}>
-               <div>
-                  <img src={homeBg1Img} alt='homeBg1Img'/>
-               </div>
-               <div>
-                  <img src={homeBg2Img} alt='homeBg2Img'/>
-               </div>
-               <div>
-                  <img src={homeBg3Img} alt='homeBg3Img'/>
-               </div>
-            </Slider>
-            <div className={s.box_filter}></div>
-         </div>
-         <div className={s.content}>
-            <div className={s.box_logo}>
-               <img className={s.logo} src={logoImg} alt="back" />
-               <h1>{t('community')}</h1>
+         <div className={s.home}>
+            <div className={s.bg}>
+               <Slider {...settings}>
+                  <div>
+                     <img src={homeBg1Img} alt='homeBg1Img'/>
+                  </div>
+                  <div>
+                     <img src={homeBg2Img} alt='homeBg2Img'/>
+                  </div>
+                  <div>
+                     <img src={homeBg3Img} alt='homeBg3Img'/>
+                  </div>
+               </Slider>
+               <div className={s.box_filter}></div>
             </div>
-
+            <div className={s.content}>
+               <WrapperPage>
+               <div className={s.box_logo}>
+                  <img className={s.logo} src={logoImg} alt="back" />
+                  <h1>{t('community')}</h1>
+               </div>
+               </WrapperPage>
+            </div>
          </div>
-      </div>
    );
 };
 export default Home

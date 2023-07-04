@@ -14,6 +14,9 @@ import Team from './pages/Team/Team';
 
 import About from './pages/About/About'
 import Community from './pages/Community/Community';
+import NavigateScroll from './components/NavigateScroll'
+
+
 
 function App() {
   const [pathStorage, setPathStorage] = useState("")
@@ -28,26 +31,30 @@ function App() {
     }
   }, [pathname, pathStorage])
 
+  let arrRoute = ['/', '/about', '/colivers', '/community', '/team', '/contacts']
+
   return (
     <div className="App">
-      <div className='container'>
-          <Navbar />
-            <Routes>
-              <Route path='/' element={<Home/>}/>
-              <Route path='/about' element={<About/>}/>
+      <NavigateScroll arrRoute={arrRoute} >
+        <div className='container'>
+            <Navbar />
+              <Routes>
+                <Route path='/' element={<Home/>}/>
+                <Route path='/about' element={<About/>}/>
 
-              <Route path='/colivers' element={<People/>}/>
-              <Route path='/colivers/:id' element={<People/>}/>
+                <Route path='/colivers' element={<People/>}/>
+                <Route path='/colivers/:id' element={<People/>}/>
 
-              <Route path='/community' element={<Community/>}/>
-              <Route path='/community/:id' element={<Community/>}/>
+                <Route path='/community' element={<Community/>}/>
+                <Route path='/community/:id' element={<Community/>}/>
 
-              <Route path='/team' element={<Team/>}/> 
-              
-              <Route path='/contacts' element={<Contasts/>}/>
-            </Routes>
-          <LinksNetwork className='links_network'/>
-      </div>
+                <Route path='/team' element={<Team/>}/> 
+                
+                <Route path='/contacts' element={<Contasts/>}/>
+              </Routes>
+            <LinksNetwork className='links_network'/>
+        </div>
+      </NavigateScroll>
     </div>
   );
 }

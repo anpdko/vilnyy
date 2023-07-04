@@ -4,12 +4,14 @@ import wandIcon from "../../assets/images/icons/wand.png"
 import teamData from "../../data/team"
 import CardPerson from '../../components/CardPerson/CardPerson'
 import { useTranslation } from 'react-i18next'
+import WrapperPage from '../../components/WrapperPage/WrapperPage'
 
 const Team = () => {
    const { t, i18n } = useTranslation();
    const langPerson = i18n.language === "uk" ? "uk" : "en";
 
    return (
+      <WrapperPage>
       <div className={s.team}>
          <h1 className='title2'>
             {t("What do you see in front of you?")}
@@ -22,6 +24,7 @@ const Team = () => {
             )}
          </div>
       </div>
+      </WrapperPage>
    );
 };
 export default Team
