@@ -11,12 +11,11 @@ import {useTranslation} from 'react-i18next'
 const Online = () => {
    const {t} = useTranslation()
    const settings = {
-      dots: true,
+      // dots: true,
       fade: true,
       infinite: true,
       autoplay: true,
       autoplaySpeed: 3000,
-      pauseOnFocus: true,
       speed: 400,
       slidesToShow: 1,
       slidesToScroll: 1

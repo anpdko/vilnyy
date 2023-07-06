@@ -61,10 +61,6 @@ const Navbar = () => {
       }, 200)
    }
 
-   useEffect(() => {
-      console.log("activePage: ", activePage)
-   }, [activePage])
-
    return (
       <React.Fragment>
          <div
@@ -86,13 +82,14 @@ const Navbar = () => {
                         spy={true}
                         smooth={true}
                         offset={0}
-                        duration={300}
+                        duration={600}
                         onSetActive={handleSetActive}
                      >
                         {t(nav.title)}
                      </Link>
                   </li>
                )}
+               <li><a href="https://vilnyy.co" target="_blank" rel="noreferrer">{t("Organization")}</a></li>
                <li><Translation /></li>
             </ul>
             <div></div>

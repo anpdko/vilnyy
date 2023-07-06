@@ -94,7 +94,6 @@
    }
 
    .bg_popup {
-
       position: fixed;
       inset: 0;
       background: rgba(217, 217, 217, 0.1);
@@ -154,13 +153,25 @@
             }
 
             .text_inst{
-               width: 0;
-               height: 100%;
                display: inline-flex;
-               align-items: flex-end;
-               justify-content: center;
-               transform: scale(0.7) translate(20px, 12px);
-               padding-left: 15px;
+               align-items: center;
+               width: 0px;
+
+               *{
+                  display: inline-flex;
+                  transform: scale(1) translate(2px, 2px);
+                  position: static;
+               }
+               // width: 0;
+               // height: 100%;
+               // display: inline-flex;
+               // align-items: flex-end;
+               // justify-content: center;
+               // padding-left: 15px;
+               // bottom: 10px;
+               // transform: scale(0.7) translate(20px, 12px);
+               // position: absolute;
+               // left: 100%;
             }
 
 

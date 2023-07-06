@@ -31,9 +31,9 @@ const PeoplePopUp = ({ person, close }: { person: IPerson, close:any }) => {
                </button>
                <h2 className={s.title}>
                   <span dangerouslySetInnerHTML={{ __html: person.title }}></span>
-                  <div className={s.text_inst}>
+                  <span className={s.text_inst}>
                      {!!person.inst && <IconInst link={person.inst} className={s.inst} />}
-                  </div>
+                  </span>
                </h2>
                <div className={s.col}>
                   <div className={s.body}>
