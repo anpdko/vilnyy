@@ -19,7 +19,7 @@ const CardTransition = ({ index, id, data }: ICardTransition) => {
 
    return (
       <div className={s.item} >
-         <div className={s.index}>
+         <div>
             {isOpen &&
                <TraditionsPopUp
                   tradition={data}
@@ -27,6 +27,8 @@ const CardTransition = ({ index, id, data }: ICardTransition) => {
                   close={() => setIsOpen(false)}
                />
             }
+         </div>
+         <div className={s.index}>
             <h3>{index + 1}</h3>
          </div>
          <div className={s.box_info}>

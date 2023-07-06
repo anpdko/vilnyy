@@ -18,7 +18,7 @@ const CardEvents = ({ data, index }: ICardEvents) => {
 
    return (
       <div className={s.item}>
-         <div className={s.index}>
+         <div>
             {isOpen &&
                <EventsPopUp 
                   data={data} 
@@ -26,6 +26,8 @@ const CardEvents = ({ data, index }: ICardEvents) => {
                   close={() => setIsOpen(false)} 
                />
             }
+         </div>
+         <div className={s.index}>
             <h3>{index + 1}</h3>
          </div>
          <div className={s.box_info}>

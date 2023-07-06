@@ -32,13 +32,13 @@
          }
 
          .index {
-            padding: 0 30px 0 60px;
+            padding: 0 30px 0 20px;
             display: flex;
             align-items: center;
             justify-content: center;
 
             @media (max-width: 1350px) {
-               padding: 0 10px 0 40px;
+               padding: 0 10px 0 20px;
             }
 
             @media (max-width: 640px) {
@@ -82,11 +82,11 @@
             }
 
             @media (max-width: 640px) {
-               padding: 0 20px 0 30px;
+               padding: 0 20px 0 5px;
             }
 
             @media (max-width: 480px) {
-               padding: 0 10px 0 15px;
+               padding: 0 10px 0 2px;
             }
 
             h2{
