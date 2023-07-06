@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 const Сontacts = () => {
    const {t} = useTranslation()
    return (
-      <div className={s.contasts}>
+      <div className={s.contasts} id="contacts">
          <Online/>
 
          <div className={s.info}>

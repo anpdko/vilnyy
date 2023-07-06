@@ -6,7 +6,7 @@ import Traditions from '../../components/Traditions/Traditions';
 
 const Community = () => {
    return (
-      <div className={s.community}>
+      <div className={s.community} id="community">
          <Traditions/>
          <Events/>
          <Belarus/>

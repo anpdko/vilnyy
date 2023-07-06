@@ -22,7 +22,7 @@ const Home = () => {
    };
 
    return (
-      <div className={s.home}>
+      <div className={s.home} id="home">
          <div className={s.bg}>
             <Slider {...settings}>
                <div>

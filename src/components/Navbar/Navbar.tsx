@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import s from './Navbar.module.scss'
-import { NavLink } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
 import navigation from '../../data/navigation'
 import LinksNetwork from '../../components/LinksNetwork/LinksNetwork';
 import Translation from '../Translation/Translation'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-scroll';
 
 
 const Navbar = () => {
-   const [toggle, setToggle] = useState(false)
-   const { pathname } = useLocation();
-   const isHome = () => pathname === "/" ? s.home : ''
+   const [toggle, setToggle] = useState(false);
+   const [activePage, setActivePage] = useState('');
+   const [isHome, setIsHome] = useState(true);
    const { t } = useTranslation()
-
-   const isActive = ({ isActive }: { isActive: boolean }) => {
-      return isActive ? s.active : ""
-   }
 
    useEffect(() => {
       if(toggle) {
@@ -27,33 +22,67 @@ const Navbar = () => {
       };
     }, [toggle]);
 
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY * 2 > window.innerHeight) {
+          setIsHome(false);
+        } else {
+          setIsHome(true);
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+   }, [])
+
 
    const toggleActive = (): string => {
       return toggle ? "active" : ""
    }
 
+   function handleSetActive(to:any) {
+      setActivePage(to)
+   }
+
+   const clickLink = (link:string) => {
+      setToggle(false)
+      setTimeout(()=>{
+         setActivePage(link)
+      }, 350)
+   }
+
+   useEffect(() => {
+      console.log("activePage: ", activePage)
+   }, [activePage])
+
    return (
       <React.Fragment>
          <div 
-            className={[s.toggle, isHome(), s[toggleActive()]].join(' ')} 
+            className={[s.toggle, isHome?s.home:'', s[toggleActive()]].join(' ')} 
             onClick={() => setToggle(!toggle)}
          >
             <span></span>
             <span></span>
             <span></span>
          </div>
-         <nav className={[s.navbar, isHome(), s[toggleActive()]].join(" ")}>
+         <nav className={[s.navbar, isHome?s.home:'', s[toggleActive()]].join(" ")}>
             <div></div>
             <ul className={s.menu}>
                {navigation.map(nav =>
-                  <li key={nav.link}>
-                     <NavLink 
-                        to={nav.link} 
-                        onClick={() => setToggle(false)} 
-                        className={isActive}
+                  <li key={nav.link} className={nav.link === activePage?s.active:''}>
+                     <Link
+                        onClick={() => clickLink(nav.link)}
+                        to={nav.link}
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={300}
+                        onSetActive={handleSetActive}
                      >
                         {t(nav.title)}
-                     </NavLink>
+                     </Link>
                   </li>
                )}
                <li><Translation/></li>

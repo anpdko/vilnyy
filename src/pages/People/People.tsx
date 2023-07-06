@@ -36,7 +36,7 @@ const People = () => {
    const langPerson = i18n.language === "uk" ? "uk" : "en";
 
    return (
-      <div className={s.people}>
+      <div className={s.people} id="colivers">
          <h1 className='title2'>{t("Our greatest value is the people who choose to live in")} <strong>VILNYY</strong></h1>
          <div className={s.cards}>
             {peopleData.map(person =>

@@ -5,11 +5,11 @@ interface INavigation {
 }
 
 const navigation:INavigation[] = [
-   { title: "About us", link: "/about" },
-   { title: "Colivers", link: "/colivers"},
-   { title: "Community", link: "/community"},
-   { title: "Team", link: "/team"},
-   { title: "Contacts", link: "/contacts"}
+   { title: "About us", link: "about" },
+   { title: "Colivers", link: "colivers"},
+   { title: "Community", link: "community"},
+   { title: "Team", link: "team"},
+   { title: "Contacts", link: "contacts"}
 
    // { title: "Наша історія", link: "/history" },
    // { title: "Наша місія", link: "/mission" },

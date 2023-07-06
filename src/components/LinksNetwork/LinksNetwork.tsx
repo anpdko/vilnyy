@@ -1,13 +1,27 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import s from './LinksNetwork.module.scss'
-import { useLocation } from 'react-router-dom'
+
 
 const LinksNetwork = ({className}:{className?: string}) => {
-   const { pathname } = useLocation();
-   const isHome = () => pathname === "/" ? s.home : ''
+   const [isHome, setIsHome] = useState(true);
+
+   useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY * 2 > window.innerHeight) {
+          setIsHome(false);
+        } else {
+          setIsHome(true);
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+   }, [])
 
    return (
-      <div className={[s.links_network, className, isHome()].join(" ")}>
+      <div className={[s.links_network, className, isHome?s.home:''].join(" ")}>
          <ul className={s.menu}>
             <li>
                <a href="https://www.facebook.com/vilnyy" target="_blank" rel="noreferrer">

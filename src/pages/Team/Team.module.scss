@@ -10,9 +10,12 @@
 
    .cards {
       margin-top: 70px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      // display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 60px;
+      justify-content: center;
 
       @media (max-width: 840px) {
          grid-template-columns: 1fr;

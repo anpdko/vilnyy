@@ -86,27 +86,27 @@
 
 .container{
    position: relative;
-   padding: 5rem 100px 0 350px;
+   padding: 0 100px 0 350px;
    overflow: hidden;
 
    @media (max-width: 1640px) {
-      padding: 5rem 100px 0 240px;
+      padding: 0 100px 0 240px;
    }
 
    @media (max-width: 1420px) {
-      padding: 5rem 80px 0 200px;
+      padding: 0 80px 0 200px;
    }
 
    @media (max-width: 1060px) {
-      padding: 1rem 80px 0 60px;
+      padding: 0 80px 0 60px;
    }
 
    @media (max-width: 890px) {
-      padding: 1rem 40px 0 40px;
+      padding: 0 40px 0 40px;
    }
 
    @media (max-width: 520px) {
-      padding: 0px 25px 0 25px;
+      padding: 0 25px 0 25px;
    }
 }
 

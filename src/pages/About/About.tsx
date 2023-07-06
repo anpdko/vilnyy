@@ -8,7 +8,7 @@ import Target from '../../components/Target/Target';
 
 const About = () => {
    return (
-      <div className={s.about}>
+      <div className={s.about} id="about">
          <History/>
          <Mission/>
          <Values/>

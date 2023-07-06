@@ -10,7 +10,7 @@ const Team = () => {
    const langPerson = i18n.language === "uk" ? "uk" : "en";
 
    return (
-      <div className={s.team}>
+      <div className={s.team} id="team">
          <h1 className='title2'>
             {t("What do you see in front of you?")}
             <img src={wandIcon} alt="icon" /><br />

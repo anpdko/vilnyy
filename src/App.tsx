@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import './App.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -31,22 +31,14 @@ function App() {
   return (
     <div className="App">
       <div className='container'>
-          <Navbar />
-            <Routes>
-              <Route path='/' element={<Home/>}/>
-              <Route path='/about' element={<About/>}/>
-
-              <Route path='/colivers' element={<People/>}/>
-              <Route path='/colivers/:id' element={<People/>}/>
-
-              <Route path='/community' element={<Community/>}/>
-              <Route path='/community/:id' element={<Community/>}/>
-
-              <Route path='/team' element={<Team/>}/> 
-              
-              <Route path='/contacts' element={<Contasts/>}/>
-            </Routes>
-          <LinksNetwork className='links_network'/>
+        <Navbar />
+        <Home/>
+        <About/>
+        <People/>
+        <Community/>
+        <Team/>
+        <Contasts/>
+        <LinksNetwork className='links_network'/>
       </div>
     </div>
   );
