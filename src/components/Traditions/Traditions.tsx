@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import s from './Traditions.module.scss'
 import peopleIcon from '../../assets/images/icons/people.png'
 import traditionsData from '../../data/traditions';
-import { useParams } from 'react-router-dom';
 import ButtonApp from '../../components/UI/ButtonApp/ButtonApp';
 import TraditionsPopUp from './TraditionsPopUp'
 import { useTranslation } from 'react-i18next';
@@ -16,18 +15,26 @@ interface ICardTransition {
 
 const CardTransition = ({ index, id, data }: ICardTransition) => {
    const { t } = useTranslation();
+   const [isOpen, setIsOpen] = useState(false);
+
    return (
-      <div className = { s.item } >
+      <div className={s.item} >
          <div className={s.index}>
+            {isOpen &&
+               <TraditionsPopUp
+                  tradition={data}
+                  index={index}
+                  close={() => setIsOpen(false)}
+               />
+            }
             <h3>{index + 1}</h3>
          </div>
          <div className={s.box_info}>
             <h2>{data.title}</h2>
-         <ButtonApp
+            <ButtonApp
                className={s.btn}
-               color="white" 
-               type='link' 
-               to={"/community/" + id}
+               color="white"
+               onClick={() => setIsOpen(true)}
             >{t("Learn more")}</ButtonApp>
          </div>
          <div className={s.foto}>
@@ -38,7 +45,6 @@ const CardTransition = ({ index, id, data }: ICardTransition) => {
 }
 
 const Traditions = () => {
-   const { id } = useParams()
    const { t, i18n } = useTranslation();
    const langPerson = i18n.language === "uk" ? "uk" : "en";
 
@@ -50,14 +56,9 @@ const Traditions = () => {
          </h1>
          <div className={s.items}>
             {traditionsData.map((item, index) =>
-               <CardTransition key = {item.id} id={item.id} index={index} data={item[langPerson]}/>
+               <CardTransition key={item.id} id={item.id} index={index} data={item[langPerson]} />
             )}
          </div>
-
-         {traditionsData.map((tradition, index) =>
-            Number(id) === tradition.id &&
-            <TraditionsPopUp key={tradition.id} index={index} tradition={tradition[langPerson]} />
-         )}
       </div>
    );
 };

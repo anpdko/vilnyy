@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react'
 import s from './People.module.scss'
-import { useNavigate } from 'react-router-dom';
 import NoScrollContainer from '../../components/NoScrollContainer/NoScrollContainer'
 import { IPerson } from '../../data/people'
 import gsap from 'gsap'
 import IconInst from '../../components/UI/IconInst/IconInst';
 
-const PeoplePopUp = ({ person }: { person: IPerson }) => {
-   const navigate = useNavigate();
+const PeoplePopUp = ({ person, close }: { person: IPerson, close:any }) => {
 
    useEffect(() => {
       gsap.from(`.${s.bg_popup}`, { delay: 0.2, duration: 0.2, opacity: 0, ease: 'power3.easeIn' })
@@ -19,7 +17,7 @@ const PeoplePopUp = ({ person }: { person: IPerson }) => {
       gsap.to(`.${s.box_popup}`, {
          duration: 0.3, opacity: 0, scale: 0, ease: 'power3.easeOut',
          onComplete: () => {
-            navigate('/colivers');
+            close();
          }
       })
    };

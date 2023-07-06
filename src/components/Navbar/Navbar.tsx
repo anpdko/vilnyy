@@ -11,29 +11,37 @@ const Navbar = () => {
    const [toggle, setToggle] = useState(false);
    const [activePage, setActivePage] = useState('');
    const [isHome, setIsHome] = useState(true);
+   const [isTop, setIsTop] = useState(true)
    const { t } = useTranslation()
 
    useEffect(() => {
-      if(toggle) {
+      if (toggle) {
          document.body.style.overflow = 'hidden';
       }
-      else{
-        document.body.style.overflow = 'auto';
+      else {
+         document.body.style.overflow = 'auto';
       };
-    }, [toggle]);
+   }, [toggle]);
 
-    useEffect(() => {
+   useEffect(() => {
       const handleScroll = () => {
-        if (window.scrollY * 2 > window.innerHeight) {
-          setIsHome(false);
-        } else {
-          setIsHome(true);
-        }
+         if (window.scrollY * 2 > window.innerHeight) {
+            setIsHome(false);
+         } else {
+            setIsHome(true);
+            setActivePage("");
+         }
+         if (window.scrollY < 50) {
+            setIsTop(true)
+         }
+         else {
+            setIsTop(false)
+         }
       };
 
       window.addEventListener('scroll', handleScroll);
       return () => {
-        window.removeEventListener('scroll', handleScroll);
+         window.removeEventListener('scroll', handleScroll);
       };
    }, [])
 
@@ -42,15 +50,15 @@ const Navbar = () => {
       return toggle ? "active" : ""
    }
 
-   function handleSetActive(to:any) {
+   function handleSetActive(to: any) {
       setActivePage(to)
    }
 
-   const clickLink = (link:string) => {
+   const clickLink = (link: string) => {
       setToggle(false)
-      setTimeout(()=>{
+      setTimeout(() => {
          setActivePage(link)
-      }, 350)
+      }, 200)
    }
 
    useEffect(() => {
@@ -59,19 +67,19 @@ const Navbar = () => {
 
    return (
       <React.Fragment>
-         <div 
-            className={[s.toggle, isHome?s.home:'', s[toggleActive()]].join(' ')} 
+         <div
+            className={[s.toggle, isTop ? s.top : "", s[toggleActive()]].join(' ')}
             onClick={() => setToggle(!toggle)}
          >
             <span></span>
             <span></span>
             <span></span>
          </div>
-         <nav className={[s.navbar, isHome?s.home:'', s[toggleActive()]].join(" ")}>
+         <nav className={[s.navbar, isHome ? s.home : '', s[toggleActive()]].join(" ")}>
             <div></div>
             <ul className={s.menu}>
                {navigation.map(nav =>
-                  <li key={nav.link} className={nav.link === activePage?s.active:''}>
+                  <li key={nav.link} className={nav.link === activePage ? s.active : ''}>
                      <Link
                         onClick={() => clickLink(nav.link)}
                         to={nav.link}
@@ -85,10 +93,10 @@ const Navbar = () => {
                      </Link>
                   </li>
                )}
-               <li><Translation/></li>
+               <li><Translation /></li>
             </ul>
             <div></div>
-            <LinksNetwork className={[s.links_network, s[toggleActive()]].join(' ')}/>
+            <LinksNetwork className={[s.links_network, s[toggleActive()]].join(' ')} />
          </nav>
       </React.Fragment>
    );

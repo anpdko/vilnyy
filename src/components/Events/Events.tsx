@@ -1,24 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import s from './Events.module.scss'
 import eventsData from '../../data/events'
 import admitIcon from '../../assets/images/icons/admit.png'
 import ButtonApp from '../../components/UI/ButtonApp/ButtonApp';
-import { useParams } from 'react-router-dom';
 import EventsPopUp from './EventsPopUp'
 import { useTranslation } from 'react-i18next';
 
 import { IEvents } from '../../data/events'
 
 interface ICardEvents {
-   id: string | number;
    index: number
    data: IEvents;
 }
 
-const CardEvents = ({ data, id, index }: ICardEvents) => {
+const CardEvents = ({ data, index }: ICardEvents) => {
+   const [isOpen, setIsOpen] = useState(false);
+
    return (
       <div className={s.item}>
          <div className={s.index}>
+            {isOpen &&
+               <EventsPopUp 
+                  data={data} 
+                  index={index}
+                  close={() => setIsOpen(false)} 
+               />
+            }
             <h3>{index + 1}</h3>
          </div>
          <div className={s.box_info}>
@@ -26,8 +33,7 @@ const CardEvents = ({ data, id, index }: ICardEvents) => {
             <ButtonApp
                className={s.btn}
                color="white"
-               type='link'
-               to={"/community/" + id}
+               onClick={() => setIsOpen(true)}
             >Дізнатись більше</ButtonApp>
          </div>
          <div className={s.foto}>
@@ -38,7 +44,6 @@ const CardEvents = ({ data, id, index }: ICardEvents) => {
 }
 
 const Events = () => {
-   const { id } = useParams()
    const { t, i18n } = useTranslation();
    const langPerson = i18n.language === "uk" ? "uk" : "en";
 
@@ -51,14 +56,9 @@ const Events = () => {
          <p className={s.text}>{t("To widen the community and attract new people, we organize various events for everyone.  Here are three of our favorites:")}</p>
          <div className={s.items}>
             {eventsData.map((item, index) =>
-               <CardEvents key={item.id} data={item[langPerson]} id={item.id} index={index} />
+               <CardEvents key={item.id} data={item[langPerson]} index={index} />
             )}
          </div>
-
-         {eventsData.map((event, index) =>
-            Number(id) === event.id &&
-            <EventsPopUp key={event.id} index={index} data={event[langPerson]} />
-         )}
       </div>
    );
 };

@@ -22,7 +22,6 @@
       .item {
          position: relative;
          background-color: var(--red);
-         color: var(--white);
          box-sizing: border-box;
          display: flex;
          justify-content: space-between;
@@ -51,6 +50,7 @@
                margin: 0;
                font-family: 'Rubik Glitch';
                font-weight: 400;
+               color: var(--white);
 
                @media (max-width: 1350px) {
                   font-size: 6.8rem;
@@ -104,6 +104,7 @@
             }
             h2, p {
                margin: 0;
+               color: var(--white);
             }
          }
 
@@ -201,7 +202,7 @@
       }
    }
 
-   .bg_popup{
+   .popup{
       position: fixed;
       inset: 0;
       background: rgba(217, 217, 217, 0.1);
