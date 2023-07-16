@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 import s from './Values.module.scss'
 import targetImg from '../../assets/images/icons/target.png'
 import { useTranslation } from 'react-i18next'
+import {scrollTrigger, scrollTriggerItems} from '../../services/gsap'
 
 const items = [
    {
@@ -20,6 +21,12 @@ const items = [
 
 const Values = () => {
    const { t } = useTranslation()
+
+   useEffect(() => {
+      scrollTrigger(`.${s.values} .title`, `.${s.values}`, { x: 0, y: -50 })
+      scrollTriggerItems(`.${s.item}`, `.${s.items}`, { x: 300 })
+   }, [])
+
    return (
       <div className={s.values}>
          <h1 className='title'>

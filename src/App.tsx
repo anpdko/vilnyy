@@ -15,6 +15,10 @@ import Team from './pages/Team/Team';
 import About from './pages/About/About'
 import Community from './pages/Community/Community';
 
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 function App() {
   const [pathStorage, setPathStorage] = useState("")
   const { pathname } = useLocation();
