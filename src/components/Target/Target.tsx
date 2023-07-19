@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import s from './Target.module.scss'
 import targetImg from '../../assets/images/target/target.png'
 import targetEngImg from '../../assets/images/target/target_eng.png'
@@ -6,9 +6,17 @@ import foto1Img from '../../assets/images/target/foto1.png'
 import foto2Img from '../../assets/images/target/foto2.png'
 import foto3Img from '../../assets/images/target/foto3.png'
 import { useTranslation } from 'react-i18next'
+import { scrollTrigger, scrollTriggerItems } from '../../services/gsap'
 
 const Target = () => {
    const {t, i18n} = useTranslation()
+
+   useEffect(() => {
+      scrollTrigger(`.${s.left} p`, `.${s.target}`, {x: -100})
+      scrollTrigger(`.${s.left} img`, `.${s.left} img`, {x: -100})
+      scrollTriggerItems(`.${s.right} img`, `.${s.target}`, {x: 100})
+   }, [])
+
    return (
       <div className={s.target}>
          <div className={s.left}>

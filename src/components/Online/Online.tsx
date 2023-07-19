@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import s from './Online.module.scss'
 import phoneIcon from '../../assets/images/icons/phone.png'
 import phone1Img from '../../assets/images/online/phone1.png'
@@ -7,6 +7,7 @@ import com1Img from '../../assets/images/online/com_1.png'
 import com2Img from '../../assets/images/online/com_2.png'
 import Slider from "react-slick";
 import {useTranslation} from 'react-i18next'
+import { scrollTrigger } from '../../services/gsap'
 
 const Online = () => {
    const {t} = useTranslation()
@@ -20,6 +21,14 @@ const Online = () => {
       slidesToShow: 1,
       slidesToScroll: 1
    };
+
+   useEffect(() => {
+      scrollTrigger(`.${s.online} .title`, `.${s.box_content}`, {y: 50})
+
+      scrollTrigger(`.${s.text} p`, `.${s.box_content}`, {x: -60})
+
+      scrollTrigger(`.${s.phone}`, `.${s.box_content}`, {x: 60})
+   }, [])
 
    return (
       <div className={s.online}>

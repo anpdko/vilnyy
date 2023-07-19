@@ -1,11 +1,21 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import s from './Сontacts.module.scss'
 import ButtonApp from '../../components/UI/ButtonApp/ButtonApp';
 import Online from '../../components/Online/Online';
 import { useTranslation } from 'react-i18next';
+import { scrollTrigger, scrollTriggerFooter } from '../../services/gsap'
 
 const Сontacts = () => {
    const {t} = useTranslation()
+
+   useEffect(() => {
+      scrollTrigger(`.${s.info}`, `.${s.info}`, {x: -100})
+      scrollTrigger(`.${s.info} h2`, `.${s.info} h2`, {x: 100})
+
+      scrollTriggerFooter(`footer`, `footer`, {y: 100})
+   }, [])
+
+
    return (
       <div className={s.contasts} id="contacts">
          <Online/>

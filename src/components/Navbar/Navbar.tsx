@@ -89,7 +89,7 @@ const Navbar = () => {
                      </Link>
                   </li>
                )}
-               <li><a href="https://vilnyy.co" target="_blank" rel="noreferrer">{t("Coliving")}</a></li>
+               <li><a href="https://vilnyy.co/coliving" target="_blank" rel="noreferrer">{t("Coliving")}</a></li>
                <li><Translation /></li>
             </ul>
             <div></div>

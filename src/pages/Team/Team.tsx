@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import s from './Team.module.scss'
 import wandIcon from "../../assets/images/icons/wand.png"
 import teamData from "../../data/team"
 import CardPerson from '../../components/CardPerson/CardPerson'
 import { useTranslation } from 'react-i18next'
+import { scrollTrigger, scrollTriggerItems } from '../../services/gsap'
 
 const Team = () => {
    const { t, i18n } = useTranslation();
    const langPerson = i18n.language === "uk" ? "uk" : "en";
+
+   useEffect(() => {
+      scrollTrigger(`#team .title2`, `#team .title2`, {y: 50})
+      scrollTriggerItems(`.team_card_person`, `.${s.cards}`, {y: 50})
+   }, [])
 
    return (
       <div className={s.team} id="team">
@@ -18,7 +24,7 @@ const Team = () => {
          </h1>
          <div className={s.cards}>
             {teamData.map((person, index) =>
-              <CardPerson key={index} data={person[langPerson]}/>
+              <CardPerson className="team_card_person" key={index} data={person[langPerson]}/>
             )}
          </div>
       </div>

@@ -9,12 +9,17 @@ function getRndInteger(min: number, max: number): number {
    return Math.floor(Math.random() * (max - min)) + min;
 }
 
-const CardPerson = ({ data }: { data: ITeam }) => {
+interface ICardPerson {
+   data: ITeam, 
+   className?: string
+}
+
+const CardPerson = ({ data, className }: ICardPerson) => {
    const sideDecor = Math.floor(Math.random() * 2)
    const angleCard = getRndInteger(-7, 7)
 
    return (
-      <div className={s.box_card}>
+      <div className={`${s.box_card} ${className}`}>
          <div
             className={[s.card, sideDecor ? s.left : s.right].join(" ")}
             style={{ transform: "rotate(" + angleCard + "deg)" }}
